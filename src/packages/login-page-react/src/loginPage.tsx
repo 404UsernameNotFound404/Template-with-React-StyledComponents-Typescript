@@ -64,13 +64,18 @@ const StyledOutlinedInput = styled(OutlinedInput)`
 const StyledButton = styled(Button)`
   && {
     width: 40%;
-    background-color: green;
+    background-color: ${(props) => props.theme.colors.success};
     color: ${(props) => props.theme.colors.primaryBackground} !important;
     margin: auto;
     margin-top: 2rem;
     display: block;
     height: 3rem;
     font-size: 1.25rem;
+  }
+
+  &&:hover {
+    background-color: ${(props) => props.theme.colors.success} !important;
+    opacity: 0.8;
   }
 `;
 

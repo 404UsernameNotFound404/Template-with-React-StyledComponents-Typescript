@@ -7,6 +7,7 @@ import {
   MessageToUser,
   MessageToUserProps,
 } from "./packages/message-to-user-react/src/MessageToUser";
+import { LoadingComponent } from "./packages/loading-react/src/loading";
 
 export const MobileBreakPoint = 700;
 export const DesktopWidth = "65rem";
@@ -20,7 +21,7 @@ const AppStyle = styled.div`
 export const AppTheme = {
   colors: {
     primaryText: "#000",
-    primaryBackground: "#ffffff",
+    primaryBackground: "#fff",
     // primaryText: "#fff",
     // primaryBackground: "#000",
     success: "green",
@@ -55,6 +56,7 @@ export default () => {
           value={{
             isLoggedIn: isLoggedIn,
             isLoading: isLoading,
+            setIsLoading: setIsLoading,
             setMessageToUser: setMessageToUser,
             login: login,
             logout: logout,
@@ -66,6 +68,7 @@ export default () => {
             </Switch>
           </Router>
           <MessageToUser {...messageToUser} />
+          <LoadingComponent isLoading={isLoading} />
         </AppContext.Provider>
       </AppStyle>
     </ThemeProvider>
