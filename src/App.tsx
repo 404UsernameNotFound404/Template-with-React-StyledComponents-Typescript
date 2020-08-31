@@ -22,8 +22,6 @@ export const AppTheme = {
   colors: {
     primaryText: "#000",
     primaryBackground: "#fff",
-    // primaryText: "#fff",
-    // primaryBackground: "#000",
     success: "green",
     error: "red",
   },
