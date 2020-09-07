@@ -11,7 +11,7 @@ It's a simple create react app with typescript. We are also using yarn in this p
 
 ## File Structure
 
-All good goes in a package. This enforces the idea of re-usability. This means whenever you start to write code consider if it could be used elsewhere. If so create a package.
+All code goes in a package. This enforces the idea of re-usability. This means whenever you start to write code consider if it could be used elsewhere. If so create a package.
 E.X of a package is "date-picker-react".
 
 ### There are also three types of packages.
@@ -21,9 +21,9 @@ E.X of a package is "date-picker-react".
 2. Another would be a package with components. A good example of this could be "date-input-react" with the package being a component that displays a date picker.
 
 3. The final package type is page. This is where you can include functions/components that won't be needed outside of a certain page of the applications. E.X "login-page-react"
-   This package would be what renders when the user is on the login route. It could also have a file "checkLoginInformation.ts" which could contain a simple function that makes sure the email/password follow a regex.\
+   This package would be what renders when the user is on the login route. It could also have a file "checkLoginInformation.ts" which could contain a simple function that makes sure the email/password follow a regex.
 
-Another thing to note is package types 1/2 should be able to work fine without any state management(react-context) however they can still use it, just checking if it exists. For instance a package may want to single to the app that it's loading which can be done through state management. This keeps packages doing specific jobs.
+Another thing to note is package types 1/2 should be able to work fine without any state management(react-context) however they can still use it if they, check if it exists first. For instance a package may want to signal to the app that it's loading which can be done through state management. This keeps packages doing specific jobs.
 
 ### File Structure Naming
 
@@ -35,7 +35,7 @@ Another thing to note is package types 1/2 should be able to work fine without a
 
 A thing all packages share is that each should have tests.
 
-The reasoning behind this is that it should help reduce dev's solving problems other's have solved. So you should be keeping a list of all the packages we have created and the package it is in. So next time a dev has to solve the problem they at least have as starting point with tests that should probably not drastically change between implementations.
+The reasoning behind this is that it should help reduce dev's solving problems other's have solved. So you should be keeping a list of all the packages we have created and the project it is in. So next time a dev has to solve the problem they at least have as starting point with tests that should probably not drastically change between implementations.
 
 # Packages that come default with template
 
