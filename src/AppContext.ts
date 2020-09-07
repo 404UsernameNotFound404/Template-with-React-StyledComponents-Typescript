@@ -8,6 +8,6 @@ export const AppContext = createContext({
   setMessageToUser: (() => {}) as React.Dispatch<
     React.SetStateAction<MessageToUserProps>
   >,
-  login: () => {},
+  login: (email, password) => {},
   logout: () => {},
 });

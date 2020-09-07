@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import {
   TextField,
@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import logo from "../assets/logo.png";
 import { AppTheme } from "../../../App";
+import { AppContext } from "../../../AppContext";
 
 const Page = styled.div`
   width: 65rem;
@@ -80,12 +81,16 @@ const StyledButton = styled(Button)`
 `;
 
 export const LoginPage = () => {
+  const { login } = useContext(AppContext);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const onEmailChange = (ev: React.ChangeEvent<HTMLInputElement>) =>
     setEmail(ev.target.value);
   const onPasswordChange = (ev: React.ChangeEvent<HTMLInputElement>) =>
     setPassword(ev.target.value);
+  const onLogin = () => login(email, password);
 
   return (
     <Page>
@@ -109,7 +114,9 @@ export const LoginPage = () => {
             onChange={onPasswordChange}
           />
         </StyledFormControl>
-        <StyledButton variant={"contained"}>Login</StyledButton>
+        <StyledButton onClick={onLogin} variant={"contained"}>
+          Login
+        </StyledButton>
       </Content>
     </Page>
   );
